@@ -1,0 +1,147 @@
+/* General Styling */
+
+  
+  .home-page {
+    font-family: "Georgia", "Times New Roman", serif;
+    background-color: #f9f9ff;
+    height: auto;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e4eafc;
+    padding: 10px 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #4a47a3;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+    color: #4a47a3;
+  }
+  
+  .logout-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .welcome-section {
+    background-color: #eef2ff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 800px;
+  }
+  
+  .welcome-section h2 {
+    font-size: 24px;
+    color: #8b89ad;
+    text-align: justify;
+  }
+  
+  .welcome-section h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    color: #383d81;
+  }
+  
+  .welcome-section .tagline {
+    font-style: italic;
+    color: #666;
+  }
+  
+  .about-us {
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  .about-us h2 {
+    font-size: 27px;
+    margin-bottom: 20px;
+  }
+  
+  .about-us p {
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .quick-actions {
+    margin: 40px auto;
+    text-align: center;
+  }
+  
+  .quick-actions h2 {
+    font-size: 27px;
+    margin-bottom: 20px;
+  }
+  
+  .actions-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .action-card img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .action-card p {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .action-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  

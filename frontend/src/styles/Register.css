@@ -1,0 +1,188 @@
+.register-page {
+    display: flex;
+    height: 100vh;
+    font-family: "Georgia", "Times New Roman", serif;
+}
+
+.register-left {
+    flex: 1;
+    background-color: #e4eafc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    border-radius: 0 50px 50px 0; /* Curvy edges */
+}
+
+.register-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../assets/book.png"); /* Replace with your watermark image */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1; /* Adjust transparency */
+    z-index: 1;
+}
+
+.register-left .logo {
+    width: 344px;
+    height: 61px;
+    margin-bottom: 20px;
+    z-index: 2; /* Ensure the logo is above the watermark */
+}
+
+.register-left h1 {
+    font-size: 2rem;
+    color: #333;
+    z-index: 2;
+    font-family: "Georgia", "Times New Roman", serif;
+    text-align: center;
+}
+
+.register-left p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+    z-index: 2;
+    text-align: center;
+}
+
+.register-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.register-form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.register-form-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: "Georgia", "Times New Roman", serif;
+}
+
+.register-form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.register-form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register-form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a47a3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.register-form-container button:hover {
+    background-color: #3b3780;
+}
+
+.redirect-login {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+.redirect-login span {
+    color: #4a47a3;
+    cursor: pointer;
+}
+
+.redirect-login span:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .register-page {
+        flex-direction: column; /* Stack the left and right sections vertically */
+        height: auto;
+    }
+
+    .register-left {
+        border-radius: 0; /* Remove curvy edges for smaller screens */
+        padding: 20px;
+        order: 2; /* Move the left section below the form on smaller screens */
+        flex: none;
+        width: 100%;
+    }
+
+    .register-right {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+        order: 1; /* Move the form to the top */
+    }
+
+    .register-form-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .register-left .logo {
+        width: 150px; /* Scale down the logo for smaller screens */
+    }
+
+    .register-left h1 {
+        font-size: 1.5rem; /* Adjust font size */
+    }
+
+    .register-left p {
+        font-size: 0.8rem; /* Adjust font size */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .register-form-container input {
+        padding: 8px; /* Reduce padding for smaller screens */
+        font-size: 0.85rem; /* Adjust input font size */
+    }
+
+    .register-form-container button {
+        padding: 8px; /* Reduce button padding */
+        font-size: 0.9rem; /* Adjust button font size */
+    }
+
+    .register-left h1 {
+        font-size: 1.2rem;
+    }
+
+    .register-left p {
+        font-size: 0.75rem;
+    }
+}

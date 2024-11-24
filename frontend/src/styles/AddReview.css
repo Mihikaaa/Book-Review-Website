@@ -1,0 +1,167 @@
+.add-review-page {
+    font-family: "Georgia", "Times New Roman", serif;
+    background-color: #f9f9ff;
+    height: 100vh;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e4eafc;
+    padding: 10px 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #4a47a3;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+    color: #4a47a3;
+  }
+  
+  .logout-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .review-form-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9f9ff;
+    border: 2px solid #4a47a3;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .review-form-container h2 {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    text-align: center; /* Center only the heading */
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: baseline; /* Ensures fields align properly */
+  }
+  
+  .form-group {
+    flex: 1; /* Ensures both Book Title and Author take equal width */
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Prevents overflow issues */
+  }
+  
+  .form-group textarea {
+    height: 100px;
+  }
+  
+  .star-rating {
+    display: flex;
+    gap: 8px;
+    align-items: baseline; /* Align stars with the "Rate" label */
+    margin-left: 5px; /* Adjust as needed */
+  }
+  
+  .form-group:last-of-type {
+    margin-top: 20px; /* Adds spacing between review and rating */
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .reset-button,
+  .add-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .reset-button {
+    background-color: #ccc;
+  }
+  
+  .add-button {
+    background-color: #4a47a3;
+    color: white;
+  }
+  
+  .add-button:hover {
+    background-color: #3b3780;
+  }
+  
+  .success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-icon {
+    font-size: 50px;
+    color: #4caf50;
+    margin-bottom: 10px;
+  }
+  
+  
+  

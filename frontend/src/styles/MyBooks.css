@@ -1,0 +1,441 @@
+.my-books-page {
+    font-family: "Georgia", "Times New Roman", serif;
+    background-color: #f9f9ff;
+    height: 100vh;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e4eafc;
+    padding: 10px 20px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #4a47a3;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+    color: #4a47a3;
+  }
+  
+  .logout-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .content {
+    z-index: 1;
+    position: relative;
+  }
+  
+  .my-books-title {
+    text-align: left;
+    font-size: 1.8rem;
+    margin-left: 20px;
+  }
+  
+  .filter-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-button {
+    background-color: #4a47a3;
+    color: white;
+    border: none;
+    padding: 5px 16px;
+    margin-right: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .search-input {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+  
+  .reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .review-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .review-card h3 {
+    margin-bottom: 5px;
+  }
+  
+  .review-card p {
+    margin: 5px 0;
+  }
+  
+  .review-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../assets/book.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+  }
+  
+  .rating-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .update-button {
+    background-color: #4a47a3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .delete-button {
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .no-results-message {
+    text-align: center;
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  
+  .blurred {
+    filter: blur(1px);
+    pointer-events: none; /* Ensures modal captures clicks */
+    user-select: none;
+  }
+  
+  .filter-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #f9f9ff;
+    z-index: 10; /* Modal above content */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    pointer-events: auto; /* Interactable modal */
+  }
+  
+  .filter-header {
+    display: flex;
+    align-items: center; /* Ensures proper vertical alignment */
+    justify-content: space-between; /* Ensures space between heading and button */
+  }
+
+  .filter-content {
+    overflow-y: auto;
+  }
+  
+  .filter-content h2 {
+    margin-bottom: 20px;
+  }
+  
+  .filter-content h3 {
+    margin-bottom: 10px;
+  }
+  
+  .filter-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+.filter-close-button {
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  font-size: 34px; /* Adjust font size for the close icon */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  margin-left: 10px; /* Fine-tune spacing from the heading */
+  line-height: 1; /* Aligns the button properly vertically */
+  padding: 0; /* Remove unnecessary padding */
+}
+  
+.closee-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    position: absolute; /* Position it relative to the modal content */
+    top: 10px; /* Adjust placement from the top */
+    right: 10px; /* Adjust placement from the right */
+    cursor: pointer;
+    z-index: 1502; /* Ensure it stays above the modal content */
+  }
+  
+
+  .actions button {
+    z-index: 100;
+  }
+
+  
+/* Update Modal */
+.update-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1500;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .update-modal h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Georgia", "Times New Roman", serif;
+  }
+  
+  /* Form Styling */
+  .update-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Larger gap for better spacing */
+  }
+  
+  /* Labels and Inputs */
+  .update-modal label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left; /* Align labels to the left */
+    display: block; /* Ensure proper block alignment */
+  }
+  
+  .update-modal input,
+  .update-modal textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Star Rating Section */
+  .update-modal .star-rating {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start; /* Left align the stars */
+    margin: 10px 0;
+  }
+  
+  /* Actions Section */
+  .update-modal .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .update-modal .cancel-button {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .update-modal .update-button {
+    background-color: #4a47a3;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Single Container Fix */
+  .update-modal-container {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .success-modal {
+    position: fixed; /* Ensure the modal stays fixed on the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Dim background for overlay effect */
+    z-index: 1500; /* Ensure it appears above all other content */
+  }
+  .modal-content {
+    position: relative; /* Necessary for the close button to position correctly */
+    background-color: #fff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1501;
+  }
+  
+  
+  .modal-contentt div:not(:last-child) {
+    margin-top: 10px;
+    margin-bottom: 10px; /* Add space between sections */
+  }
+
+  .modal-contentt {
+    background-color: #fff;
+    padding: 30px;
+    text-align: justify; /* Center-align content inside the modal */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for better visibility */
+    z-index: 1501; /* Ensure it stays above the dimmed background */
+  }
+  .modal-icon {
+    font-size: 50px;
+    color: #4caf50;
+    margin-bottom: 10px;
+  }
+  
+  .close-button {
+    background-color: #4a47a3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+.delete-confirm-modal,
+.delete-success-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.delete-confirm-content,
+.delete-success-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  position: relative;
+}
+
+.delete-confirm-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.confirm-yes,
+.confirm-no {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-yes {
+  background-color: #4a47a3;
+  color: white;
+}
+
+.confirm-no {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.delete-success-content .close-button {
+  position: absolute;
+  top: -14px;
+  right: 2px;
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+}
+
+.success-icon {
+  font-size: 50px;
+  color: green;
+  margin-bottom: 10px;
+}
+
